@@ -32,8 +32,3 @@ PRODUCT_PACKAGES += \
     PhotoTable \
     preinstalled-packages-platform-aosp-product.xml \
     WallpaperPicker \
-
-# NFC:
-#   Provide a libnfc-nci.conf to GSI product
-PRODUCT_COPY_FILES += \
-    device/generic/common/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_PRODUCT)/etc/libnfc-nci.conf
