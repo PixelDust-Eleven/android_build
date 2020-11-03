@@ -32,5 +32,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.ringtone=The_big_adventure.ogg
 
 PRODUCT_PACKAGES += \
-    PhotoTable \
-    WallpaperPicker \
+    PhotoTable
+
