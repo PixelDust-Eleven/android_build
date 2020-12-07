@@ -2768,7 +2768,6 @@ endif
 
 # $(1): output file
 define build-systemimage-target
-  echo -e ${CL_GRN}"----- Generating Changelog ------"${CL_RST}
   $(hide) ./vendor/pixeldust/tools/changelog.sh
   $(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(PIXELDUST_VERSION)-Changelog.txt
   echo -e ${CL_CYN}"Target system fs image: $(1)"${CL_RST}
