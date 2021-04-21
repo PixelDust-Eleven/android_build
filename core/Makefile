@@ -2277,9 +2277,9 @@ $(recovery_ramdisk): $(MKBOOTFS) $(COMPRESSION_COMMAND_DEPS) \
 # $(1): output file
 # $(2): kernel file
 define build-recoveryimage-target
-  echo -e ${CL_GRN}"----- Generating Changelog ------"${CL_RST}
-  $(hide) ./vendor/pixeldust/tools/changelog.sh
-  $(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(PIXELDUST_VERSION)-Changelog.txt
+#  echo -e ${CL_GRN}"----- Generating Changelog ------"${CL_RST}
+#  $(hide) ./vendor/pixeldust/tools/changelog.sh
+#  $(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(PIXELDUST_VERSION)-Changelog.txt
   $(if $(filter true,$(PRODUCT_SUPPORTS_VBOOT)), \
     $(MKBOOTIMG) --kernel $(2) $(INTERNAL_RECOVERYIMAGE_ARGS) \
                  $(INTERNAL_MKBOOTIMG_VERSION_ARGS) $(BOARD_RECOVERY_MKBOOTIMG_ARGS) \
@@ -2768,8 +2768,8 @@ endif
 
 # $(1): output file
 define build-systemimage-target
-  $(hide) ./vendor/pixeldust/tools/changelog.sh
-  $(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(PIXELDUST_VERSION)-Changelog.txt
+#  $(hide) ./vendor/pixeldust/tools/changelog.sh
+#  $(hide) mv $(PRODUCT_OUT)/Changelog.txt $(PRODUCT_OUT)/$(PIXELDUST_VERSION)-Changelog.txt
   echo -e ${CL_CYN}"Target system fs image: $(1)"${CL_RST}
   $(call create-system-vendor-symlink)
   $(call create-system-product-symlink)
