@@ -598,10 +598,25 @@ function print_lunch_menu()
     local uname=$(uname)
     local choices=$(TARGET_BUILD_APPS= LUNCH_MENU_CHOICES="${LUNCH_MENU_CHOICES[@]}" get_build_var COMMON_LUNCH_CHOICES)
     echo
-    echo "You're building on" $uname
-    echo
-    echo "Lunch menu... pick a combo:"
-
+    echo ""
+    tput setaf 2;
+    tput bold;
+    echo " ██▓███  ██▒██   ██▓█████ ██▓   ▓█████▄ █    ██  ██████▄▄▄█████▓"
+    echo "▓██░  ██▓██▒▒ █ █ ▒▓█   ▀▓██▒   ▒██▀ ██▌██  ▓██▒██    ▒▓  ██▒ ▓▒"
+    echo "▓██░ ██▓▒██░░  █   ▒███  ▒██░   ░██   █▓██  ▒██░ ▓██▄  ▒ ▓██░ ▒░"
+    echo "▒██▄█▓▒ ░██░░ █ █ ▒▒▓█  ▄▒██░   ░▓█▄   ▓▓█  ░██░ ▒   ██░ ▓██▓ ░ "
+    echo "▒██▒ ░  ░██▒██▒ ▒██░▒████░██████░▒████▓▒▒█████▓▒██████▒▒ ▒██▒ ░ "
+    echo "▒▓▒░ ░  ░▓ ▒▒ ░ ░▓ ░░ ▒░ ░ ▒░▓  ░▒▒▓  ▒░▒▓▒ ▒ ▒▒ ▒▓▒ ▒ ░ ▒ ░░   "
+    echo "░▒ ░     ▒ ░░   ░▒ ░░ ░  ░ ░ ▒  ░░ ▒  ▒░░▒░ ░ ░░ ░▒  ░ ░   ░    "
+    echo "░░       ▒ ░░    ░    ░    ░ ░   ░ ░  ░ ░░░ ░ ░░  ░  ░   ░      "
+    tput sgr0;
+    echo ""
+    echo "                      Welcome to the device menu                      "
+    echo ""
+    tput bold;
+    echo "     Below are all the devices currently available to be compiled     "
+    tput sgr0;
+    echo ""
     local i=1
     local choice
     for choice in $choices
@@ -621,7 +636,7 @@ function lunch()
         answer=$1
     else
         print_lunch_menu
-        echo -n "Which would you like? [aosp_arm-eng] "
+        echo -n "Which would you like? [pixeldust_device-userdebug] "
         read answer
     fi
 
