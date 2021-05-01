@@ -596,7 +596,7 @@ function add_lunch_combo()
 function print_lunch_menu()
 {
     local uname=$(uname)
-    local choices=$(TARGET_BUILD_APPS= LUNCH_MENU_CHOICES="${LUNCH_MENU_CHOICES[@]}" get_build_var COMMON_LUNCH_CHOICES)
+    local choices=$(TARGET_BUILD_APPS= get_build_var COMMON_LUNCH_CHOICES)
     echo
     echo ""
     tput setaf 2;
@@ -619,7 +619,7 @@ function print_lunch_menu()
     echo ""
     local i=1
     local choice
-    for choice in $choices
+    for choice in $(TARGET_BUILD_APPS= LUNCH_MENU_CHOICES="${LUNCH_MENU_CHOICES[@]}" get_build_var COMMON_LUNCH_CHOICES)
     do
         echo "     $i. $choice"
         i=$(($i+1))
