@@ -18,4 +18,8 @@
 # (like "CRB01").  It must be a single word, and is
 # capitalized by convention.
 
+ifneq ($(filter bramble redfin,$(TARGET_DEVICE)),)
 BUILD_ID=RQ2A.210505.003
+else
+BUILD_ID=RQ2A.210505.002
+endif
